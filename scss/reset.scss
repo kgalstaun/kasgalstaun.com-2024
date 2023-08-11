@@ -1,0 +1,74 @@
+/* Reset styles */
+html,
+body,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+code,
+em,
+img,
+small,
+strong,
+sub,
+sup {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-weight: normal;
+  vertical-align: baseline;
+}
+
+/* Remove list styles (optional) */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Typography */
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+}
+
+/* Inputs and Textareas */
+input,
+textarea {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-family: inherit;
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Additional styling for form elements can be added here */
+
+/* Box Sizing */
+* {
+  box-sizing: border-box;
+}
+
+/* Clearfix (if needed) */
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
