@@ -1,29 +1,24 @@
 <template>
-    <header class="header">
-        <div class="header__container">
-            header
-        </div>
-    </header>
+  <header class="header">
+    <div class="header__container">header</div>
+  </header>
 </template>
 
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>
 
 <style lang="scss" scoped>
-$component: 'header';
+$component: "header";
 
 .#{$component} {
-    width: 100%;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+
+  &__container {
+    min-width: $grid-width;
+    background-color: white;
     height: 10rem;
-
-    background-color: red;
-
-    display: flex;
-    justify-content: center;
-
-    &__container {
-        max-width: $grid-width;
-    }
-
+  }
 }
 </style>
