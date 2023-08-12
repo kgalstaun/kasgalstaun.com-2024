@@ -2,6 +2,7 @@
   <div class="app">
     <div class="app__container">
       <ElementHeader />
+      <NuxtPage />
       <ElementFooter />
     </div>
   </div>
@@ -16,7 +17,7 @@ $component: "app";
   height: 100%;
 
   &__container {
-    margin-top: 40vh;
+    margin-top: 30rem;
   }
 }
 </style>

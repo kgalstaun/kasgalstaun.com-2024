@@ -5,7 +5,7 @@
         <template #column-middle>
           <div class="header__column">
             <div class="header__logo-container">
-              <h3>kas galstaun</h3>
+              <h1>kas galstaun</h1>
             </div>
             <div class="header__nav-container">
               <nav class="header__nav">
