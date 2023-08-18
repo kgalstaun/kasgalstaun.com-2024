@@ -4,14 +4,15 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
 
   // css
-  css: ['~/scss/_index.scss'],
+  css: ["~/scss/_index.scss"],
   vite: {
     css: {
       preprocessorOptions: {
         scss: {
-          additionalData: '@use "@/scss/variables/_variables.scss" as *;',
+          additionalData:
+            '@use "@/scss/variables/_variables.scss" as *; @use "@/scss/mixin/_mixin.scss" as *;',
         },
       },
     },
   },
-})
+});

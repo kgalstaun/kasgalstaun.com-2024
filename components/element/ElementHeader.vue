@@ -1,24 +1,9 @@
 <template>
   <header class="header">
     <div class="header__container">
-      <LayoutDefaultGrid>
-        <template #column-middle>
-          <div class="header__column">
-            <div class="header__logo-container">
-              <h1>kas galstaun</h1>
-            </div>
-            <div class="header__nav-container">
-              <nav class="header__nav">
-                <a class="header__nav-link">experience </a>
-                <span>| </span>
-                <a class="header__nav-link">education </a>
-                <span>| </span>
-                <a class="header__nav-link">about </a>
-              </nav>
-            </div>
-          </div>
-        </template>
-      </LayoutDefaultGrid>
+      <div class="header__title-container">
+        <h1 class="header__title">KG</h1>
+      </div>
     </div>
   </header>
 </template>
@@ -32,17 +17,41 @@ $component: "header";
   width: 100%;
 
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+
+  @include defaultPagePadding;
 
   &__container {
-    min-width: $grid-width;
+    max-width: $grid-width;
 
+    padding-top: 2.5rem;
     background-color: white;
+
+    display: flex;
+    justify-content: center;
   }
 
-  &__column {
+  &__title-container {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  &__title {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    font-family: $font-mono;
+
+    // compensate for the default letter spacing
+    margin-left: -4px;
+  }
+
+  &__subtitle {
+    margin-top: 1rem;
+    font-family: $font-epilogue;
+    font-size: clamp(1.4rem, 3vw, 1.6rem);
   }
 }
 </style>

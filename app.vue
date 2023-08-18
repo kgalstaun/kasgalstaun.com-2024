@@ -15,9 +15,5 @@ $component: "app";
 
 .#{$component} {
   height: 100%;
-
-  &__container {
-    margin-top: 30rem;
-  }
 }
 </style>
