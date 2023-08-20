@@ -17,6 +17,7 @@ $component: "header-logo";
   font-family: $font-mono;
   font-size: 8.2rem;
   color: rgb(237, 226, 226);
+  mix-blend-mode: difference;
 
   -webkit-touch-callout: none;
   -webkit-user-select: none;

@@ -77,6 +77,8 @@ $component: "hero";
     height: 100%;
 
     margin-top: -5rem;
+
+    mix-blend-mode: difference;
   }
 
   &__text-container {
@@ -88,7 +90,7 @@ $component: "hero";
   &__image-container {
     height: 100%;
 
-    border: 3px dotted white;
+    border: 4px dotted white;
   }
 }
 </style>
