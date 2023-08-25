@@ -1,7 +1,7 @@
 <template>
   <div class="index">
     <div class="index__container">
-      <ElementHero></ElementHero>
+      <ElementHeroHome></ElementHeroHome>
     </div>
   </div>
 </template>
