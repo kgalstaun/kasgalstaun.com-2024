@@ -15,6 +15,8 @@ $component: "hero-text";
   line-height: 1.26;
   color: rgb(237, 226, 226);
 
+  z-index: 10;
+
   &__and-sign {
     font-variation-settings: "wght" 400;
   }

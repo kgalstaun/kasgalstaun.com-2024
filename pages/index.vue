@@ -15,6 +15,6 @@ $component: "index";
   height: 300vh;
   width: 100%;
 
-  background-color: whitesmoke;
+  background-color: $color-beige;
 }
 </style>

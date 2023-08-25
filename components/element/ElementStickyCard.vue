@@ -7,9 +7,17 @@
 </template>
 
 <script setup lang="ts">
+const stickyDistanceToTop = ref(180);
+
+const getStickyDistanceToTopAsPixelString = computed(() => {
+  return stickyDistanceToTop.value + "px";
+});
+
 const pageHeight = computed(() => {
   if (document) {
-    return document.documentElement.scrollHeight + "px";
+    return (
+      document.documentElement.scrollHeight - stickyDistanceToTop.value + "px"
+    );
   }
 });
 </script>
@@ -34,18 +42,19 @@ $component: "sticky-card";
     // en als die flipt, flippen de child elements ook, als kaarten die uit elkaar schuiven
     // en bij het scrollen naar beneden, over de pagina, flipt ie van zijwaartse view, naar rechtopstaand, en dan kun je daar weer meespelen en ook kaarten voor of achter elkaar laten verschijnen
     // dus: de eerste verschijnt boven de tweeden, met een swipe animatie op scroll, als experience erin komt
+    // je moet even uitdenken hoe je dit het beste kan uitvoeren.
     // transform: rotate(-8deg);
   }
 
   &__container-two {
     position: sticky;
-    top: 18rem;
+    top: v-bind(getStickyDistanceToTopAsPixelString);
     left: 0px;
     height: 50rem;
     width: 60rem;
     border: 1px solid white;
 
-    transform: rotate(4deg);
+    // transform: rotate(4deg);
 
     // dit hoeven geen after elements te zijn. je kan het ook gewoon normale elements maken. dan kun je het ook vullen in de html, met een paar foto's
     &::after,
@@ -62,11 +71,11 @@ $component: "sticky-card";
     }
 
     &::after {
-      transform: rotate(4deg);
+      // transform: rotate(4deg);
     }
 
     &::before {
-      transform: rotate(8deg);
+      // transform: rotate(8deg);
     }
   }
 }

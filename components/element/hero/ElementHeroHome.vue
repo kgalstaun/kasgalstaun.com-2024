@@ -33,6 +33,7 @@ $component: "hero-home";
   }
 
   &__card-container {
+    mix-blend-mode: difference;
   }
 }
 </style>
