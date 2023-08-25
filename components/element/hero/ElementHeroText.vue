@@ -1,6 +1,6 @@
 <template>
   <h1 class="hero-text">
-    Hey, I'm Kas. <br />A creative developer
+    Hey, I'm Kas. <br />A creative developer <br />
     <span class="hero-text__and-sign">&</span> Vue
     <span class="hero-text__emphasis">specialist</span>.
   </h1>

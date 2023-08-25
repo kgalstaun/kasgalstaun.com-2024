@@ -1,11 +1,11 @@
 <template>
-  <ElementHero>
+  <ElementHero class="hero--theme-default">
     <div class="hero-home__container">
       <div class="hero-home__text-container">
         <ElementHeroText></ElementHeroText>
       </div>
       <div class="hero-home__card-container">
-        <ElementHeroCard></ElementHeroCard>
+        <ElementStickyCard></ElementStickyCard>
       </div>
     </div>
   </ElementHero>
@@ -19,7 +19,7 @@ $component: "hero-home";
 .#{$component} {
   &__container {
     display: grid;
-    grid-template-columns: 7fr 5fr;
+    grid-template-columns: 7fr 2fr;
 
     width: 100%;
     height: 100%;
@@ -33,7 +33,6 @@ $component: "hero-home";
   }
 
   &__card-container {
-    border: 1px solid white;
   }
 }
 </style>

@@ -36,6 +36,14 @@ $component: "hero";
   width: 100%;
   height: 100vh;
 
+  &--theme-default {
+    .#{$component} {
+      &__container {
+        background-color: $color-blue--dark;
+      }
+    }
+  }
+
   &__container {
     @include defaultPagePadding;
 
@@ -44,8 +52,6 @@ $component: "hero";
     left: 0px;
     width: 100%;
     height: calc(100% - 2.5rem);
-
-    background-color: #172232;
 
     border-bottom-left-radius: 33px;
     border-bottom-right-radius: 33px;

@@ -12,7 +12,7 @@
 $component: "index";
 
 .#{$component} {
-  height: 100%;
+  height: 300vh;
   width: 100%;
 
   background-color: whitesmoke;
