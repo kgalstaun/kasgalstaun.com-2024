@@ -54,7 +54,7 @@ $component: "sticky-card";
     width: 60rem;
     border: 1px solid white;
 
-    // transform: rotate(4deg);
+    transform: rotate(4deg);
 
     // dit hoeven geen after elements te zijn. je kan het ook gewoon normale elements maken. dan kun je het ook vullen in de html, met een paar foto's
     &::after,
@@ -71,11 +71,11 @@ $component: "sticky-card";
     }
 
     &::after {
-      // transform: rotate(4deg);
+      transform: rotate(4deg);
     }
 
     &::before {
-      // transform: rotate(8deg);
+      transform: rotate(8deg);
     }
   }
 }
