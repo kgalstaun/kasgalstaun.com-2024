@@ -11,10 +11,14 @@
 $component: "hero";
 
 .#{$component} {
+  border-bottom-left-radius: 33px;
+  border-bottom-right-radius: 33px;
+  overflow: hidden;
+
   &--theme-default {
     .#{$component} {
       &__container {
-        background-color: mondrian-black;
+        background-color: $mondrian-black;
       }
     }
   }
@@ -22,7 +26,7 @@ $component: "hero";
   &__container {
     @include defaultPagePadding;
 
-    height: 100vh;
+    height: calc(100vh);
     width: 100%;
 
     display: flex;

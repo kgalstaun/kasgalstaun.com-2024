@@ -12,6 +12,8 @@
 $component: "app";
 
 .#{$component} {
-  height: 100%;
+  height: 300vh;
+
+  background-color: $mondrian-white;
 }
 </style>

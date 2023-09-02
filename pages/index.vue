@@ -14,7 +14,5 @@ $component: "index";
 
 .#{$component} {
   width: 100%;
-
-  background-color: $mondrian-black;
 }
 </style>
