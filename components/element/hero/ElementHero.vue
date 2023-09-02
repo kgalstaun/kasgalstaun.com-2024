@@ -20,6 +20,8 @@ const containerClasses = computed(() => {
   };
 });
 
+const startAnimation = ref(false);
+
 onMounted(() => {
   setTimeout(() => {
     triggerAnimation.value = true;
@@ -51,14 +53,10 @@ $component: "hero";
     top: 0%;
     left: 0px;
     width: 100%;
-    height: calc(100% - 2.5rem);
+    height: 100%;
 
-    border-bottom-left-radius: 33px;
-    border-bottom-right-radius: 33px;
-
-    &.active {
-      animation: slideIn 0.6s cubic-bezier(0.87, 0, 0.13, 1);
-    }
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
   }
 
   &__container-two {

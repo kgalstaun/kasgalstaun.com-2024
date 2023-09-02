@@ -1,6 +1,12 @@
 <template>
-  <span class="header-logo">K</span>
+  <span class="header-logo">{{ data }}</span>
 </template>
+
+<script setup lang="ts">
+defineProps<{
+  data: string;
+}>();
+</script>
 
 <style lang="scss">
 $component: "header-logo";
@@ -16,8 +22,7 @@ $component: "header-logo";
 
   font-family: $font-mono;
   font-size: 8.2rem;
-  color: rgb(237, 226, 226);
-  mix-blend-mode: difference;
+  color: $color-beige;
 
   -webkit-touch-callout: none;
   -webkit-user-select: none;

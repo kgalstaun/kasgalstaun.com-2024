@@ -12,9 +12,8 @@
 $component: "index";
 
 .#{$component} {
-  height: 300vh;
   width: 100%;
 
-  background-color: $color-beige;
+  background-color: white;
 }
 </style>
