@@ -3,6 +3,12 @@ export default defineNuxtConfig({
   // build
   devtools: { enabled: true },
 
+  modules: [["@pinia/nuxt", { autoImports: ["defineStore", "storeToRefs"] }]],
+
+  imports: {
+    dirs: ["stores"],
+  },
+
   // css
   css: ["~/scss/_index.scss"],
   vite: {

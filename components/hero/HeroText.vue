@@ -1,13 +1,24 @@
 <template>
   <h1 class="hero-text">
     Hey, I'm Kas<span></span>. <br />A freelance
-    <span class="hero-text__color--yellow">front-end </span> developer<br />
+    <span
+      class="hero-text__color--yellow"
+      :class="{ 'start-animate': startTextColorAnimation }"
+      >front-end
+    </span>
+    developer<br />
     <span class="hero-text__and-sign">&</span>
     <span class="hero-text__underline"> Vue</span> specialist.
   </h1>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const startTextColorAnimation = ref(false);
+
+// to do: maak composoble voor het checken van overlay animatie
+
+onMounted(() => {});
+</script>
 
 <style lang="scss">
 $component: "hero-text";

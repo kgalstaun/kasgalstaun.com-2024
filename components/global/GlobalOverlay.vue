@@ -1,17 +1,22 @@
 <template>
-  <div class="overlay" :class="{ 'start-animation': startAnimation }"></div>
+  <div
+    v-if="overlayAnimationActive"
+    class="overlay"
+    :class="{ 'start-animation': startAnimation }"
+  ></div>
 </template>
 
 <script setup lang="ts">
-const animationFinished = ref(false);
+const { overlayAnimationActive } = storeToRefs(useAnimationStore());
 const startAnimation = ref(false);
+const overlayAnimationTime = 1700;
 
 onMounted(() => {
   startAnimation.value = true;
 
   setTimeout(() => {
-    animationFinished.value = true;
-  }, 1700);
+    overlayAnimationActive.value = false;
+  }, overlayAnimationTime);
 });
 </script>
 
@@ -28,13 +33,13 @@ $component: "overlay";
 
   z-index: 999;
 
-  background-color: $mondrian-yellow;
+  background-color: $mondrian-white;
 
   transform: translateY(0%);
 
   &.start-animation {
     transform: translateY(-100%);
-    transition: transform 1s 1s $ease-cubic;
+    transition: transform 0.88s 0.88s ease;
   }
 }
 </style>
