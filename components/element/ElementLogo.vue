@@ -14,15 +14,10 @@ $component: "header-logo";
 .#{$component} {
   width: 100%;
 
-  display: flex;
-  justify-content: center;
-
-  margin-left: -4px;
-  margin-top: -12px;
-
   font-family: $font-mono;
-  font-size: 8.2rem;
-  color: $color-beige;
+  font-size: 9.2rem;
+
+  // transform: rotate(-90deg);
 
   -webkit-touch-callout: none;
   -webkit-user-select: none;

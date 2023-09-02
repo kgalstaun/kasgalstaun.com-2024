@@ -5,7 +5,6 @@
         class="header__logo-container"
         :class="{ 'fade-in': startAnimation }"
       >
-        >
         <ElementLogo :data="'K'"></ElementLogo>
       </div>
     </div>
@@ -31,19 +30,17 @@ $component: "header";
   display: flex;
   justify-content: center;
 
+  color: $mondrian-white;
+
+  &.color-black {
+    color: $mondrian-black;
+  }
+
   &__container {
     max-width: $grid-width;
 
     display: flex;
     justify-content: center;
-  }
-
-  &__logo-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    @include fadeIn;
   }
 }
 </style>

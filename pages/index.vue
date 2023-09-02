@@ -1,8 +1,9 @@
 <template>
   <div class="index">
     <div class="index__container">
-      <ElementHeroHome></ElementHeroHome>
+      <HeroHome></HeroHome>
     </div>
+    <GlobalOverlay></GlobalOverlay>
   </div>
 </template>
 
@@ -14,6 +15,6 @@ $component: "index";
 .#{$component} {
   width: 100%;
 
-  background-color: white;
+  background-color: $mondrian-black;
 }
 </style>

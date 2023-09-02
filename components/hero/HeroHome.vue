@@ -1,15 +1,9 @@
 <template>
-  <ElementHero class="hero--theme-default">
+  <Hero class="hero--theme-default">
     <div class="hero-home__container" :class="{ 'slide-in': startAnimation }">
-      <ElementHeroText
-        :data="{
-          firstLine: 'Hey, I\'m Kas',
-          secondLine: 'A freelance front-end developer',
-          thirdLine: 'Vue specialist',
-        }"
-      ></ElementHeroText>
+      <HeroText></HeroText>
     </div>
-  </ElementHero>
+  </Hero>
 </template>
 
 <script setup lang="ts">

@@ -3,7 +3,7 @@
     <div class="hero__container" :class="containerClasses">
       <template v-if="triggerAnimation">
         <div class="hero__container-two">
-          <ElementHeader></ElementHeader>
+          <GlobalHeader></GlobalHeader>
           <slot></slot>
         </div>
       </template>
@@ -33,15 +33,10 @@ onMounted(() => {
 $component: "hero";
 
 .#{$component} {
-  position: relative;
-
-  width: 100%;
-  height: 100vh;
-
   &--theme-default {
     .#{$component} {
       &__container {
-        background-color: $color-blue--dark;
+        background-color: mondrian-black;
       }
     }
   }
@@ -49,14 +44,8 @@ $component: "hero";
   &__container {
     @include defaultPagePadding;
 
-    position: absolute;
-    top: 0%;
-    left: 0px;
+    height: 100vh;
     width: 100%;
-    height: 100%;
-
-    border-bottom-left-radius: 30px;
-    border-bottom-right-radius: 30px;
   }
 
   &__container-two {
