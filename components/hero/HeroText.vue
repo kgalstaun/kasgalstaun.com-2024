@@ -3,7 +3,7 @@
     Hey, I'm Kas<span></span>. <br />A freelance
     <span class="hero-text__color--yellow">front-end </span> developer<br />
     <span class="hero-text__and-sign">&</span>
-    <span class="hero-text__underline">Vue</span> specialist.
+    <span class="hero-text__underline"> Vue</span> specialist.
   </h1>
 </template>
 
@@ -22,7 +22,7 @@ $component: "hero-text";
 
   max-width: 80vw;
 
-  transform: translateY(-2vh);
+  transform: translateY(-1vh);
 
   &__color {
     &--yellow {

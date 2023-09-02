@@ -1,25 +1,14 @@
 <template>
   <header class="header">
     <div class="header__container">
-      <div
-        class="header__logo-container"
-        :class="{ 'fade-in': startAnimation }"
-      >
+      <div class="header__logo-container">
         <ElementLogo :data="'K'"></ElementLogo>
       </div>
     </div>
   </header>
 </template>
 
-<script setup lang="ts">
-const startAnimation = ref(false);
-
-onMounted(() => {
-  setTimeout(() => {
-    startAnimation.value = true;
-  }, 520);
-});
-</script>
+<script setup lang="ts"></script>
 
 <style lang="scss" scoped>
 $component: "header";

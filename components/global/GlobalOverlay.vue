@@ -1,11 +1,5 @@
 <template>
-  <div
-    v-if="!animationFinished"
-    class="overlay"
-    :class="{ 'start-animation': startAnimation }"
-  >
-    <GlobalHeader class="color-black"></GlobalHeader>
-  </div>
+  <div class="overlay" :class="{ 'start-animation': startAnimation }"></div>
 </template>
 
 <script setup lang="ts">
@@ -34,13 +28,13 @@ $component: "overlay";
 
   z-index: 999;
 
-  background-color: $mondrian-white;
+  background-color: $mondrian-yellow;
 
   transform: translateY(0%);
 
   &.start-animation {
     transform: translateY(-100%);
-    transition: transform 0.66s 1s $ease-cubic;
+    transition: transform 1s 1s $ease-cubic;
   }
 }
 </style>
