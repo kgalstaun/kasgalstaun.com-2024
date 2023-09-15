@@ -1,22 +1,19 @@
 <template>
-  <div
-    v-if="overlayAnimationActive"
-    class="overlay"
-    :class="{ 'start-animation': startAnimation }"
-  ></div>
+  <div class="overlay" :class="{ 'start-animation': startAnimation }">
+    <div class="overlay__logo"><ElementLogo :data="'K'"></ElementLogo></div>
+  </div>
 </template>
 
 <script setup lang="ts">
 const { overlayAnimationActive } = storeToRefs(useAnimationStore());
 const startAnimation = ref(false);
-const overlayAnimationTime = 1700;
 
 onMounted(() => {
   startAnimation.value = true;
 
   setTimeout(() => {
     overlayAnimationActive.value = false;
-  }, overlayAnimationTime);
+  }, 1200);
 });
 </script>
 
@@ -40,6 +37,13 @@ $component: "overlay";
   &.start-animation {
     transform: translateY(-100%);
     transition: transform 0.88s 0.88s ease;
+  }
+
+  &__logo {
+    position: absolute;
+    top: 5rem;
+    left: 50%;
+    transform: translate(-50%, 0%);
   }
 }
 </style>
