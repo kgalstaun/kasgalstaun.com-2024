@@ -6,6 +6,7 @@
       :class="{ 'start-animate': startTextColorAnimation }"
       >front-end
     </span>
+    <br />
     developer<br />
     <span class="hero-text__and-sign">&</span>
     <span class="hero-text__underline"> Vue</span> specialist.

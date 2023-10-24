@@ -11,8 +11,8 @@
 $component: "hero";
 
 .#{$component} {
-  border-bottom-left-radius: 33px;
-  border-bottom-right-radius: 33px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
   overflow: hidden;
 
   &--theme-default {
@@ -24,7 +24,7 @@ $component: "hero";
   }
 
   &__container {
-    @include defaultPagePadding;
+    @include defaultPadding;
 
     height: calc(100vh);
     width: 100%;

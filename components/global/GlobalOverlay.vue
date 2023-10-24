@@ -1,7 +1,5 @@
 <template>
-  <div class="overlay" :class="{ 'start-animation': startAnimation }">
-    <div class="overlay__logo"><ElementLogo :data="'K'"></ElementLogo></div>
-  </div>
+  <div class="overlay" :class="{ 'start-animation': startAnimation }"></div>
 </template>
 
 <script setup lang="ts">
@@ -36,14 +34,7 @@ $component: "overlay";
 
   &.start-animation {
     transform: translateY(-100%);
-    transition: transform 0.88s 0.88s ease;
-  }
-
-  &__logo {
-    position: absolute;
-    top: 5rem;
-    left: 50%;
-    transform: translate(-50%, 0%);
+    transition: transform 1s 0.7s cubic-bezier(0.22, 1, 0.36, 1);
   }
 }
 </style>

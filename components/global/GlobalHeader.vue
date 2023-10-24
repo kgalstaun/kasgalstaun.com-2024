@@ -31,5 +31,9 @@ $component: "header";
     display: flex;
     justify-content: center;
   }
+
+  &__logo-container {
+    margin-top: 3rem;
+  }
 }
 </style>
