@@ -27,6 +27,8 @@ $component: "hero";
     @include defaultPadding;
 
     height: calc(100vh);
+    min-height: 40rem;
+
     width: 100%;
 
     display: flex;

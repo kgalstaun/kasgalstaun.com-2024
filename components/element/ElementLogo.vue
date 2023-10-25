@@ -19,6 +19,10 @@ $component: "header-logo";
 
   // transform: rotate(-90deg);
 
+  @media screen and (max-width: $screen-size-sm) {
+    font-size: 7.2rem;
+  }
+
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;

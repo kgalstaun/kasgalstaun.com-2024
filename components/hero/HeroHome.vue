@@ -28,6 +28,8 @@ $component: "hero-home";
     align-items: center;
     justify-content: center;
 
+    min-height: 40rem;
+
     margin-top: -5rem;
   }
 }

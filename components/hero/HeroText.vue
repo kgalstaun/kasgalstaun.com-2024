@@ -36,6 +36,15 @@ $component: "hero-text";
 
   transform: translateY(-1vh);
 
+  @media screen and (max-width: $screen-size-md) {
+    font-size: 5rem;
+    text-align: center;
+  }
+
+  @media screen and (max-width: $screen-size-sm) {
+    font-size: 4rem;
+  }
+
   &__color {
     &--yellow {
       color: $mondrian-yellow;
