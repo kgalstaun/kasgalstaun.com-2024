@@ -9,6 +9,10 @@
             class="index__content"
           ></ElementTextBlock>
         </template>
+        <ElementScrollBanner
+          :data="'PortfolioPortfolioPortfolioPortfolioPortfolio'"
+          class="index__content"
+        ></ElementScrollBanner>
 
         <!-- ticker template -->
         <!-- experience met subcomponents en sticky  -->

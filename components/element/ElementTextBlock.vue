@@ -71,10 +71,10 @@ $component: "text-block";
     line-height: 1.725;
 
     &--big {
-      font-size: 5rem;
+      font-size: 6rem;
     }
     &--small {
-      font-size: 3rem;
+      font-size: 4rem;
       line-height: 2;
       font-style: italic;
     }
