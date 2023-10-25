@@ -64,6 +64,10 @@ $component: "index";
 
   &__content {
     padding-top: 15rem;
+
+    @media screen and (max-width: $screen-size-lg) {
+      padding-top: 5rem;
+    }
   }
 }
 </style>

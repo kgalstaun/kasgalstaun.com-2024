@@ -41,8 +41,21 @@ $component: "text-block";
       .#{$component}__column--1 {
         order: 2;
       }
+
       .#{$component}__column--2 {
         order: 1;
+      }
+    }
+
+    @media screen and (max-width: $screen-size-md) {
+      grid-template-columns: 1fr;
+
+      &.reverse {
+        grid-template-columns: 1fr;
+
+        .#{$component}__text {
+          text-align: end;
+        }
       }
     }
   }
@@ -64,6 +77,20 @@ $component: "text-block";
       font-size: 3rem;
       line-height: 2;
       font-style: italic;
+    }
+
+    @media screen and (max-width: $screen-size-md) {
+      padding-left: 1rem;
+      padding-right: 1rem;
+
+      &--big {
+        font-size: 3.2rem;
+      }
+
+      &--small {
+        font-size: 2rem;
+        text-align: end;
+      }
     }
   }
 }
