@@ -10,12 +10,10 @@
           ></ElementTextBlock>
         </template>
         <ElementScrollBanner
-          :data="'PortfolioPortfolioPortfolioPortfolioPortfolio'"
+          :data="'ExperienceExperienceExperience'"
           class="index__content"
         ></ElementScrollBanner>
-
-        <!-- ticker template -->
-        <!-- experience met subcomponents en sticky  -->
+        <Portfolio :data="content.home.portfolio"></Portfolio>
         <!-- certificates -->
         <!-- contact me  -->
       </main>
@@ -25,7 +23,6 @@
 </template>
 
 <script setup lang="ts">
-import ContentComponent from "./ContentComponent.vue";
 import { onMounted, ref } from "vue";
 
 import useQuery from "@/composables/useQuery";
@@ -50,7 +47,6 @@ async function fetchContent() {
       content.value = data;
       loaded.value = true;
 
-      console.log(content.value);
       return true;
     })
     .catch((error) => {
@@ -65,6 +61,7 @@ $component: "index";
 
 .#{$component} {
   width: 100%;
+  overflow: hidden;
 
   &__content {
     padding-top: 15rem;

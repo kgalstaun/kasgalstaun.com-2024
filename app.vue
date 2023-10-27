@@ -14,7 +14,7 @@ const { overlayAnimationActive } = storeToRefs(useAnimationStore());
 $component: "app";
 
 .#{$component} {
-  background-color: $mondrian-white;
+   background-color: $mondrian-white;
 
   &.overlay-is-active {
     height: 100vh;

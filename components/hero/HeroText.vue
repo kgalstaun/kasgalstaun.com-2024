@@ -33,7 +33,7 @@ $component: "hero-text";
   color: $mondrian-white;
 
   max-width: 80vw;
-  font-size: 7.2rem;
+  font-size: 7.6rem;
 
   @media screen and (max-width: $screen-size-md) {
     font-size: 5rem;

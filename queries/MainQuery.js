@@ -12,6 +12,24 @@ const MainQuery = gql`
         textSmall
         text
       }
+      portfolio {
+        title
+        text {
+          html
+        }
+        image {
+          url
+        }
+      }
+      education {
+        content {
+          html
+        }
+      }
+      contact {
+        title
+        link
+      }
     }
   }
 `;

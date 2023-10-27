@@ -38,7 +38,7 @@ $component: "scroll-banner";
   }
 
   &__text {
-    font-size: 30rem;
+    font-size: 26.6rem;
 
     &--pseudo {
       @extend .#{$component}__text;
