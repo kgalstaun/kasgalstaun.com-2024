@@ -41,5 +41,13 @@ $component: "contact";
     display: flex;
     gap: 3rem;
   }
+
+  &__link {
+    background-color: $mondrian-black;
+    color: $mondrian-white;
+    border-radius: 25px;
+    padding: 2rem 4rem;
+    font-size: 2.4rem;
+  }
 }
 </style>
