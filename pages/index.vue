@@ -3,19 +3,34 @@
     <div class="index__container">
       <HeroHome></HeroHome>
       <main class="index__main" v-if="loaded && content && !error">
-        <template v-for="introText in content.home.introTexts">
+        <section
+          v-if="content.home?.introTexts"
+          v-for="introText in content.home.introTexts"
+          class="index__section"
+        >
+          <ElementTextBlock :data="introText"></ElementTextBlock>
+        </section>
+        <section class="index__section">
+          <ElementScrollBanner
+            :data="'ExperienceExperienceExperience'"
+          ></ElementScrollBanner>
+        </section>
+        <section v-if="content.home?.portfolio">
+          <Portfolio :data="content.home.portfolio"></Portfolio>
+        </section>
+        <section v-if="content.home?.education?.intro" class="index__section">
           <ElementTextBlock
-            :data="introText"
-            class="index__content"
+            :data="content.home?.education?.intro"
           ></ElementTextBlock>
-        </template>
-        <ElementScrollBanner
-          :data="'ExperienceExperienceExperience'"
-          class="index__content"
-        ></ElementScrollBanner>
-        <Portfolio :data="content.home.portfolio"></Portfolio>
-        <!-- certificates -->
-        <!-- contact me  -->
+        </section>
+        <section v-if="content.home?.education?.content?.html">
+          <ElementTextRight
+            :data="content.home?.education?.content?.html"
+          ></ElementTextRight>
+        </section>
+        <section v-if="content.home?.contact?.length" class="index__section">
+          <ElementContact :data="content.home?.contact"> </ElementContact>
+        </section>
       </main>
     </div>
   </div>
@@ -63,7 +78,7 @@ $component: "index";
   width: 100%;
   overflow: hidden;
 
-  &__content {
+  &__section {
     padding-top: 15rem;
 
     @media screen and (max-width: $screen-size-lg) {

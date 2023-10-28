@@ -1,11 +1,11 @@
 <template>
-  <section class="portfolio">
+  <div class="portfolio">
     <div class="portfolio__container">
       <template v-for="(item, index) in data">
         <PortfolioItem class="portfolio__item" :data="item"></PortfolioItem
       ></template>
     </div>
-  </section>
+  </div>
 </template>
 
 <script setup lang="ts">

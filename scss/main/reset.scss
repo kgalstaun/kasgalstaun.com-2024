@@ -66,6 +66,23 @@ img {
   box-sizing: border-box;
 }
 
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+button,
+input[type="submit"],
+input[type="reset"] {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
 /* Clearfix (if needed) */
 .clearfix::after {
   content: "";

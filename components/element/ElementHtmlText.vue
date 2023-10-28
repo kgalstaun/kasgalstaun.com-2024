@@ -12,7 +12,7 @@ $component: "html-text";
 
 .#{$component} {
   p {
-    font-size: 1.8rem;
+    font-size: 1.9rem;
     line-height: 1.725;
     hyphens: auto;
     word-wrap: break-word;
@@ -31,16 +31,24 @@ $component: "html-text";
   h3,
   h4,
   h5 {
-    font-family: "Calgary";
+    font-family: $font-epilogue;
     text-wrap: balance;
   }
 
+  ul {
+    width: 100%;
+  }
+
   li {
+    width: 100%;
+    font-size: 2.3rem;
     list-style: circle;
+    line-height: 1.625;
     font-weight: normal !important;
 
-    div {
-      font-family: "Quicksand";
+    > div {
+      font-family: $font-epilogue;
+      margin-left: 1.6rem;
     }
 
     &:not(:last-child) {

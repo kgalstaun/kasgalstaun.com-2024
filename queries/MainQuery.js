@@ -22,6 +22,11 @@ const MainQuery = gql`
         }
       }
       education {
+        intro {
+          textRight
+          textSmall
+          text
+        }
         content {
           html
         }

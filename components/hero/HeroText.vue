@@ -28,7 +28,7 @@ $component: "hero-text";
   font-family: $font-epilogue;
   font-variation-settings: "wght" 350;
   text-align: center;
-  line-height: 1.26;
+  line-height: 1.25;
 
   color: $mondrian-white;
 
