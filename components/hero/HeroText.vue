@@ -2,23 +2,43 @@
   <h1 class="hero-text">
     Hey, I'm Kas<span></span>. <br />A freelance
     <span
-      class="hero-text__color--yellow"
-      :class="{ 'start-animate': startTextColorAnimation }"
-      >front-end
-    </span>
+      class="hero-text letters"
+      v-for="(letter, index) in text"
+      :key="index"
+      ref="textCharRefs"
+      >{{ letter }}</span
+    >
     <br />
     developer<br />
-    <span class="hero-text__and-sign">&</span>
-    <span class="hero-text__underline"> Vue</span> specialist.
+    <span class="hero-text__and-sign">& </span>
+    <span
+      class="hero-text__underline"
+      :class="{ animate: startUnderlineAnimation }"
+      >Vue</span
+    >
+    specialist.
   </h1>
 </template>
 
 <script setup lang="ts">
-const startTextColorAnimation = ref(false);
+const startUnderlineAnimation = ref(false);
+const text = ref("front-end".split(""));
+const textCharRefs = ref([]);
 
-// to do: maak composoble voor het checken van overlay animatie
+const startTextColorAnimation = () => {
+  textCharRefs.value.forEach((item: any, index) => {
+    setTimeout(() => {
+      item.classList.add("animate");
+    }, index * 33);
+  });
+};
 
-onMounted(() => {});
+onMounted(() => {
+  setTimeout(startTextColorAnimation, 900);
+  setTimeout(() => {
+    startUnderlineAnimation.value = true;
+  }, 1400);
+});
 </script>
 
 <style lang="scss">
@@ -44,12 +64,12 @@ $component: "hero-text";
     font-size: 4rem;
   }
 
-  &__color {
-    &--yellow {
+  &.letters {
+    display: inline-block;
+
+    &.animate {
+      transition: color 0.05s ease-out;
       color: $mondrian-yellow;
-    }
-    &--red {
-      color: $mondrian-red;
     }
   }
 
@@ -61,17 +81,24 @@ $component: "hero-text";
     position: relative;
     overflow: hidden;
 
+    &.animate {
+      &::before {
+        width: 100%;
+      }
+    }
+
     &::before {
       content: "";
       position: absolute;
-
       background-color: $mondrian-blue;
-      width: 92%;
       height: 6px;
       bottom: 0;
-      left: 8%;
+      left: 50%;
+      width: 0%;
+      transform: translateX(-50%);
 
       border-radius: 5px;
+      transition: width 0.22s ease-out;
     }
   }
 }

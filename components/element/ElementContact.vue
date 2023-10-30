@@ -32,7 +32,6 @@ $component: "contact";
   padding-bottom: 50px;
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
-
   &__container {
     @include defaultOutline;
     align-items: flex-start;

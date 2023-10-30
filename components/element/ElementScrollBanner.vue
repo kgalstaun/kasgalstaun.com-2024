@@ -1,6 +1,10 @@
 <template>
   <div class="scroll-banner">
-    <div class="scroll-banner__container" ref="scrollBannerRef">
+    <div
+      class="scroll-banner__container"
+      ref="scrollBannerRef"
+      :style="{ transform: `translateX(${animationTransform}px)` }"
+    >
       <span class="scroll-banner__text--real">
         {{ data }}
       </span>
@@ -19,6 +23,8 @@ defineProps<{
 }>();
 
 const scrollBannerRef = ref();
+const scrollBannerTextRef = ref();
+const animationTransform = ref(0);
 const isInView = ref(false);
 
 onMounted(() => {
@@ -37,9 +43,9 @@ watch(position, (newValue, oldValue) => {
   if (!isInView.value) return;
 
   if (newValue > oldValue) {
-    console.log("scrolling down");
+    animationTransform.value += 3;
   } else {
-    console.log("scrolling up");
+    animationTransform.value -= 3;
   }
 });
 </script>
@@ -54,6 +60,8 @@ $component: "scroll-banner";
   &__container {
     width: 100%;
     height: 100%;
+    transform: translateX(0px);
+    will-change: transform;
   }
 
   &__text-container {
@@ -75,7 +83,7 @@ $component: "scroll-banner";
 
     &--real {
       @extend .#{$component}__text;
-      margin-left: -50%;
+      margin-left: -150%;
     }
   }
 }

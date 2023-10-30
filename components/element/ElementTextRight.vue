@@ -25,7 +25,7 @@ $component: "text-right";
     @include defaultOutline;
 
     display: grid;
-    grid-template-columns: 5fr 7fr;
+    grid-template-columns: 4fr 8fr;
   }
 
   &__column {
