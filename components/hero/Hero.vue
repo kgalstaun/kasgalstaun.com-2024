@@ -15,7 +15,7 @@ const startFadeInAnimation = ref(false);
 onMounted(() => {
   setTimeout(() => {
     startFadeInAnimation.value = true;
-  }, 900);
+  }, 850);
 });
 </script>
 
