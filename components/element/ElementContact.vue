@@ -1,7 +1,7 @@
 <template>
   <div class="contact">
     <div class="contact__container">
-      <h1 class="contact__title">Let's talk!</h1>
+      <h1 class="contact__title">Contact</h1>
       <ul class="contact__link-list">
         <template v-for="link in data">
           <li v-if="link.title && link.link" class="contact__link-container">
@@ -32,6 +32,9 @@ $component: "contact";
   padding-bottom: 50px;
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
+
+  background-color: rgb(240, 240, 240);
+
   &__container {
     @include defaultOutline;
     align-items: flex-start;

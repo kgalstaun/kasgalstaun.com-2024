@@ -1,5 +1,5 @@
 <template>
-  <div class="scroll-banner">
+  <div class="scroll-banner" :style="{ color: color }">
     <div
       class="scroll-banner__container"
       ref="scrollBannerRef"
@@ -17,13 +17,13 @@
 
 <script setup lang="ts">
 import { useScrollStore } from "@/stores/scroll";
+import { useGlobalStore } from "@/stores/global";
 
 defineProps<{
   data: string;
 }>();
 
 const scrollBannerRef = ref();
-const scrollBannerTextRef = ref();
 const animationTransform = ref(0);
 const isInView = ref(false);
 
@@ -38,14 +38,29 @@ onMounted(() => {
 });
 
 const { position } = storeToRefs(useScrollStore());
+const { background } = storeToRefs(useGlobalStore());
+
+const color = computed(() => {
+  return background.value.color === "white" ? "#050103" : "#eaefe9";
+});
 
 watch(position, (newValue, oldValue) => {
   if (!isInView.value) return;
 
-  if (newValue > oldValue) {
+  const scrollingDown = newValue > oldValue;
+
+  if (scrollingDown) {
     animationTransform.value += 3;
+
+    if (background.value.color === "white") {
+      useGlobalStore().setBackgroundColor("black");
+    }
   } else {
     animationTransform.value -= 3;
+
+    if (background.value.color === "black") {
+      useGlobalStore().setBackgroundColor("white");
+    }
   }
 });
 </script>
@@ -56,6 +71,8 @@ $component: "scroll-banner";
 .#{$component} {
   width: 100%;
   position: relative;
+
+  @include colorChangeTransition;
 
   &__container {
     width: 100%;

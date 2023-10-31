@@ -1,6 +1,10 @@
 <template>
-  <div class="text-block">
-    <div class="text-block__container" :class="{ reverse: data.textRight }">
+  <div class="text-block" :class="{ 'animate-in': isInView }" ref="container">
+    <div
+      class="text-block__container"
+      :class="{ reverse: data.textRight }"
+      :style="{ color: color }"
+    >
       <div class="text-block__column--1">
         <div class="text-block__text">
           <span
@@ -15,12 +19,31 @@
   </div>
 </template>
 
-<!-- to do add animation for fade in from top -->
-
 <script setup lang="ts">
 defineProps<{
   data: any;
 }>();
+
+const container = ref();
+const isInView = ref(false);
+const { background } = storeToRefs(useGlobalStore());
+
+const color = computed(() => {
+  return background.value.color === "white" ? "#050103" : "#eaefe9";
+});
+
+onMounted(() => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      isInView.value = entries[0].isIntersecting;
+    },
+    { threshold: 0.1 }
+  );
+
+  if (container.value) {
+    observer.observe(container.value);
+  }
+});
 </script>
 
 <style lang="scss">
@@ -31,11 +54,15 @@ $component: "text-block";
   display: flex;
   justify-content: center;
 
+  @include animateIn(0.05s, "up");
+
   &__container {
     @include defaultOutline;
 
     display: grid;
     grid-template-columns: 7fr 5fr;
+
+    @include colorChangeTransition;
 
     &.reverse {
       grid-template-columns: 5fr 7fr;

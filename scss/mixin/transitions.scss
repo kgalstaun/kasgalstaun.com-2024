@@ -8,6 +8,13 @@
   }
 }
 
+@mixin colorChangeTransition {
+  transition: color 0.66s 0.22s ease-out;
+}
+
+@mixin backgroundColorChangeTransition {
+  transition: background-color 0.66s 0.22s ease-out;
+}
 @mixin animateIn($delay, $direction) {
   transition:
     transform 0.33s $ease-default $delay,
@@ -18,7 +25,7 @@
   @if $direction == "down" {
     transform: translateY(-100px);
   } @else if $direction == "up" {
-    transform: translateY(-100px);
+    transform: translateY(50px);
   }
 
   &.animate-in {

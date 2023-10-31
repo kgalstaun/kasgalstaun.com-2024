@@ -1,5 +1,5 @@
 <template>
-  <div class="portfolio-item">
+  <div class="portfolio-item" :style="{ color: color }">
     <div class="portfolio-item__column--1">
       <h2 class="portfolio-item__title">{{ data.title }}</h2>
       <ElementHtmlText
@@ -19,6 +19,12 @@
 defineProps<{
   data: any;
 }>();
+
+const { background } = storeToRefs(useGlobalStore());
+
+const color = computed(() => {
+  return background.value.color === "white" ? "#050103" : "#eaefe9";
+});
 </script>
 
 <style lang="scss">
@@ -29,11 +35,7 @@ $component: "portfolio-item";
   grid-template-columns: 6fr 6fr;
   gap: 10rem;
 
-  &:nth-child(2) {
-    .#{$component}__image-container {
-      background-color: $mondrian-black;
-    }
-  }
+  @include colorChangeTransition;
 
   &__column {
     &--1,
@@ -48,7 +50,6 @@ $component: "portfolio-item";
 
   &__image-container {
     padding: 5rem;
-    background-color: $mondrian-black;
     border-radius: 5px;
   }
 }
