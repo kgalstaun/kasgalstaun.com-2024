@@ -30,7 +30,7 @@ $component: "hero";
   &--theme-default {
     .#{$component} {
       &__container {
-        background-color: $mondrian-black;
+        background-color: $mondrian-black-light;
       }
     }
   }

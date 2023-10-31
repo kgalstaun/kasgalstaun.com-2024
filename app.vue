@@ -15,7 +15,7 @@ const { overlayAnimationActive } = storeToRefs(useAnimationStore());
 const { background } = storeToRefs(useGlobalStore());
 
 const backgroundColor = computed(() => {
-  return background.value.color === "white" ? "#eaefe9" : "#050103";
+  return background.value.color === "white" ? "#eaefe9" : "#131313";
 });
 </script>
 

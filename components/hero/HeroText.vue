@@ -38,7 +38,7 @@ onMounted(() => {
   setTimeout(() => {
     startFadeInAnimation.value = true;
   }, 780);
-  setTimeout(startTextColorAnimation, 1000);
+  setTimeout(startTextColorAnimation, 1100);
   setTimeout(() => {
     startUnderlineAnimation.value = true;
   }, 1600);

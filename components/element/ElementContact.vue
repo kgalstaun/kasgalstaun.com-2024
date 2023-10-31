@@ -33,7 +33,7 @@ $component: "contact";
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
 
-  background-color: rgb(240, 240, 240);
+  background-color: $mondrian-white;
 
   &__container {
     @include defaultOutline;
