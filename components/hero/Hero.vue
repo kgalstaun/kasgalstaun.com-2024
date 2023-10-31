@@ -1,11 +1,23 @@
 <template>
   <section class="hero">
     <div class="hero__container">
-      <GlobalHeader></GlobalHeader>
+      <GlobalHeader
+        class="hero__header"
+        :class="{ 'animate-in': startFadeInAnimation }"
+      ></GlobalHeader>
       <slot></slot>
     </div>
   </section>
 </template>
+
+<script setup>
+const startFadeInAnimation = ref(false);
+onMounted(() => {
+  setTimeout(() => {
+    startFadeInAnimation.value = true;
+  }, 900);
+});
+</script>
 
 <style lang="scss">
 $component: "hero";
@@ -33,6 +45,10 @@ $component: "hero";
 
     display: flex;
     flex-direction: column;
+  }
+
+  &__header {
+    @include animateIn(0s, "down");
   }
 }
 </style>

@@ -7,3 +7,22 @@
     opacity: 1;
   }
 }
+
+@mixin animateIn($delay, $direction) {
+  transition:
+    transform 0.33s $ease-default $delay,
+    opacity 0.33s $ease-default;
+
+  opacity: 0;
+
+  @if $direction == "down" {
+    transform: translateY(-100px);
+  } @else if $direction == "up" {
+    transform: translateY(-100px);
+  }
+
+  &.animate-in {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

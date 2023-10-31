@@ -1,8 +1,8 @@
 <template>
-  <h1 class="hero-text">
+  <h1 class="hero-text" :class="{ 'animate-in': startFadeInAnimation }">
     Hey, I'm Kas<span></span>. <br />A freelance
     <span
-      class="hero-text letters"
+      class="letters"
       v-for="(letter, index) in text"
       :key="index"
       ref="textCharRefs"
@@ -22,6 +22,7 @@
 
 <script setup lang="ts">
 const startUnderlineAnimation = ref(false);
+const startFadeInAnimation = ref(false);
 const text = ref("front-end".split(""));
 const textCharRefs = ref([]);
 
@@ -34,10 +35,13 @@ const startTextColorAnimation = () => {
 };
 
 onMounted(() => {
-  setTimeout(startTextColorAnimation, 900);
+  setTimeout(() => {
+    startFadeInAnimation.value = true;
+  }, 780);
+  setTimeout(startTextColorAnimation, 950);
   setTimeout(() => {
     startUnderlineAnimation.value = true;
-  }, 1400);
+  }, 1450);
 });
 </script>
 
@@ -55,6 +59,8 @@ $component: "hero-text";
   max-width: 80vw;
   font-size: 7.6rem;
 
+  @include animateIn(0s, "down");
+
   @media screen and (max-width: $screen-size-md) {
     font-size: 5rem;
     text-align: center;
@@ -64,11 +70,12 @@ $component: "hero-text";
     font-size: 4rem;
   }
 
-  &.letters {
+  .letters {
     display: inline-block;
 
     &.animate {
       transition: color 0.05s ease-out;
+      transform: scale(1);
       color: $mondrian-yellow;
     }
   }
