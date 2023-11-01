@@ -1,14 +1,16 @@
 <template>
   <h1 class="hero-text" :class="{ 'animate-in': startFadeInAnimation }">
     Hey, I'm Kas<span></span>. <br />A freelance
-    <span
-      class="letters"
-      v-for="(letter, index) in text"
-      :key="index"
-      ref="textCharRefs"
-      >{{ letter }}</span
-    >
-    <br />
+    <div class="letters-container">
+      <span
+        class="letters"
+        v-for="(letter, index) in text"
+        :key="index"
+        ref="textCharRefs"
+        >{{ letter }}</span
+      >
+    </div>
+
     developer<br />
     <span class="hero-text__and-sign">& </span>
     <span
@@ -37,7 +39,7 @@ const startTextColorAnimation = () => {
 onMounted(() => {
   setTimeout(() => {
     startFadeInAnimation.value = true;
-  }, 780);
+  }, 900);
   setTimeout(startTextColorAnimation, 1100);
   setTimeout(() => {
     startUnderlineAnimation.value = true;
@@ -78,6 +80,10 @@ $component: "hero-text";
       transform: scale(1);
       color: $mondrian-yellow;
     }
+  }
+
+  .letters-container {
+    display: inline-block;
   }
 
   &__and-sign {
