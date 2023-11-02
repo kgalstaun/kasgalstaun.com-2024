@@ -15,9 +15,11 @@ $component: "header-logo";
   width: 100%;
 
   font-family: $font-mono;
-  font-size: 9.2rem;
+  font-size: 12rem;
 
-  // transform: rotate(-90deg);
+  @media screen and (max-width: $screen-size-xxl) {
+    font-size: 9.2rem;
+  }
 
   @media screen and (max-width: $screen-size-sm) {
     font-size: 7.2rem;

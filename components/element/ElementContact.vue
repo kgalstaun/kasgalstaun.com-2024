@@ -1,11 +1,11 @@
 <template>
-  <div class="contact">
+  <div class="contact" :class="{ 'animate-in': isInView }" ref="container">
     <div class="contact__container">
       <h1 class="contact__title">Contact</h1>
       <ul class="contact__link-list">
         <template v-for="link in data">
           <li v-if="link.title && link.link" class="contact__link-container">
-            <button class="contact__link">
+            <button class="contact__link" @click="navigateTo(link.link)">
               {{ link.title }}
             </button>
           </li>
@@ -19,6 +19,30 @@
 defineProps<{
   data: any;
 }>();
+
+const container = ref();
+const isInView = ref(false);
+
+const navigateTo = (link: string) => {
+  if (link.startsWith("mailto:")) {
+    window.location.href = link;
+  } else {
+    window.open(link, "_blank");
+  }
+};
+
+onMounted(() => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      isInView.value = entries[0].isIntersecting;
+    },
+    { threshold: 0.1 }
+  );
+
+  if (container.value) {
+    observer.observe(container.value);
+  }
+});
 </script>
 
 <style lang="scss" scoped>
@@ -34,6 +58,19 @@ $component: "contact";
   border-top-right-radius: 25px;
 
   background-color: $mondrian-white;
+
+  transition:
+    transform 0.33s $ease-default,
+    opacity 0.33s $ease-default;
+
+  opacity: 0;
+
+  transform: translateY(150px);
+
+  &.animate-in {
+    transform: translateY(0);
+    opacity: 1;
+  }
 
   &__container {
     @include defaultOutline;
