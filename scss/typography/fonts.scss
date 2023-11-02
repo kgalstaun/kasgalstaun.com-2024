@@ -8,8 +8,5 @@
 
 @font-face {
   font-family: "mono";
-  src:
-    url("assets/fonts/mono.woff2") format("woff2"),
-    url("assets/fonts/mono.woff") format("woff"),
-    url("assets/fonts/mono.ttf") format("truetype");
+  src: url("assets/fonts/mono.ttf") format("truetype");
 }
