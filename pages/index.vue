@@ -12,7 +12,7 @@
         </section>
         <section class="index__section">
           <ElementScrollBanner
-            :data="'PortfolioPortfolioPortfolioPortfolio'"
+            :data="'PortfolioPortfolioPortfolioPortfolioPortfolioPortfolio'"
           ></ElementScrollBanner>
         </section>
         <section v-if="content.home?.portfolio">

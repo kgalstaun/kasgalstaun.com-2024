@@ -30,6 +30,8 @@ $component: "text-right";
 
 .#{$component} {
   width: 100%;
+  display: flex;
+  justify-content: center;
 
   &__container {
     @include defaultOutline;

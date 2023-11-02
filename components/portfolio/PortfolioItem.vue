@@ -98,7 +98,7 @@ $component: "portfolio-item";
   }
 
   &__image-container {
-    padding: 25%;
+    padding: 20%;
     transition: padding 0.5s ease-out;
     border-radius: 5px;
 

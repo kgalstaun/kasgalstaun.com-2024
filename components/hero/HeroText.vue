@@ -55,13 +55,20 @@ $component: "hero-text";
   font-variation-settings: "wght" 350;
   text-align: center;
   line-height: 1.25;
+  font-size: 10.6rem;
 
   color: $mondrian-white;
 
-  max-width: 80vw;
-  font-size: 7.6rem;
+  max-width: 120rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
 
   @include animateIn(0s, "down");
+
+  @media screen and (max-width: $screen-size-xxl) {
+    font-size: 7.6rem;
+    text-align: center;
+  }
 
   @media screen and (max-width: $screen-size-md) {
     font-size: 5rem;
